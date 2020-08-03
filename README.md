@@ -7,7 +7,8 @@ Sub-plugin of Moodle Quiz to enable the group notion for the quiz.
 Must be install under `.../mod/quiz/report/group`.  
 Available in French and English.
 
-Works on moodle 3.1 -> 3.5  
+Works on moodle 3.1 -> 3.8
+Not tested on Moodle 3.7, see https://github.com/cborn/moodle_quiz_group for proposed fixed. 
 
 ### How it works
 
