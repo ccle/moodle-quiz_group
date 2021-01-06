@@ -92,7 +92,10 @@ function get_user_group_for_groupquiz($userid, $quizid, $courseid, $groupingid =
     // if not empty grp_intersect pick the first group.
 
     if (!empty($grpsintersect)) {
-        $grpid = $grpsintersect[0];
+        // START UCLA MOD: CCLE-8809 - Group Quiz plugin request.
+        // $grpid = $grpsintersect[0];
+        $grpid = reset($grpsintersect);
+        // END UCLA MOD: CCLE-8809.
     }
 
     return $grpid;
@@ -151,6 +154,9 @@ function create_groupattempt_from_attempt($attempt, $courseid) {
     $grpatt->quizid = $quizid;
     $grpatt->groupingid =
     $grpatt->timemodified = time(); //now
+    // START UCLA MOD: CCLE-8809 - Group Quiz plugin request.
+    $grpatt->userid = $userid;
+    // END UCLA MOD: CCLE-8809.
 
     $grpatt->groupid = get_user_group_for_groupquiz($userid, $quizid, $courseid, $groupingid);
 
